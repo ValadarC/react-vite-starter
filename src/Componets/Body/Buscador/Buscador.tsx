@@ -1,12 +1,12 @@
 import styles from './Buscador.module.css'
-import {useState, FC, ChangeEvent} from 'react'
+import { useState, FC, ChangeEvent } from 'react'
 
 interface Prop {
   text?: string
-  onChange: (text:string)=>void
+  onChange: (text: string) => void
 }
 
-export const Buscador: FC<Prop> = (props) => {
+export const Buscador: FC<Prop> = props => {
   const [text, setText] = useState('')
 
   const onSubmit = (event: ChangeEvent<HTMLInputElement>) => {
@@ -14,11 +14,11 @@ export const Buscador: FC<Prop> = (props) => {
     props.onChange(event.target.value)
   }
 
-  const validar = () => {
-    if (text) {
-      console.log(text)
-    }
-  }
+  // const validar = () => {
+  //   if (text) {
+  //     console.log(text)
+  //   }
+  // }
 
   return (
     <div className={styles.buscador}>
@@ -28,11 +28,9 @@ export const Buscador: FC<Prop> = (props) => {
         onChange={onSubmit}
         placeholder="Pokemon..."
       />
-      <button onClick={validar} className={styles.SearchButton}>
+      {/* <button onClick={validar} className={styles.SearchButton}>
         Pesquisar
-      </button>
+      </button> */}
     </div>
   )
 }
-
-

@@ -1,8 +1,8 @@
-import React from 'react'
-import styles from './Card.module.css'
+import { FC } from 'react'
+import './card.css'
 import { Pokemon } from '../../../interfaces/Pokemon.interface'
 
-export const Card: React.FC<Pokemon> = ({
+export const Card: FC<Pokemon> = ({
   name,
   id,
   img,
@@ -17,25 +17,51 @@ export const Card: React.FC<Pokemon> = ({
   sdf,
   spd,
 }) => {
+  console.log(type1)
   return (
-    <div className={styles.card} key={id}>
-      <h3>{name}</h3>
-      <h3>{id}</h3>
-      <img src={img} />
-      <p>
-        Type: {type1} / {type2}
-      </p>
-      <p>
-        Weight: {weight} / Height: {height}
-      </p>
-      <ul>
-        <li>HP: {hp}</li>
-        <li>Attack: {atk}</li>
-        <li>Defense: {def}</li>
-        <li>Special Attack: {sat}</li>
-        <li>Special Defense: {sdf}</li>
-        <li>Speed: {spd}</li>
-      </ul>
+    <div className={`card ${type1}`} key={id}>
+      <div className={'headerCard'}>
+        <p>{name}</p>
+        <p>{id}</p>
+      </div>
+
+      <div className={'contentCard'}>
+        <div className={'cardImg'}>
+          <img src={img} />
+        </div>
+
+        <div className={'tiposCard'}>
+          <div className={`${type1}`}>{type1}</div>
+          <div className={`${type2}`}>{type2}</div>
+        </div>
+
+        <div className={'mensuresCard'}>
+          <div className={'icones'}>
+            <img
+              className={'imgIconos'}
+              src="src/Componets/Body/Card/SVG/Weight.svg"
+            />
+            <div>{weight/10} kg</div>
+          </div>
+          <div className={'sep'}></div>
+          <div className={'icones'}>
+            <img
+              className={'imgIconos'}
+              src="src\Componets\Body\Card\SVG\Ruler.svg"
+            />
+            <div>{height / 10} m</div>
+          </div>
+        </div>
+
+        <div className={'statsCard'}>
+          <li className={'stat'}>HP_ {hp}</li>
+          <li className={'stat'}>ATK {atk}</li>
+          <li className={'stat'}>DEF {def}</li>
+          <li className={'stat'}>SAT {sat}</li>
+          <li className={'stat'}>SDF {sdf}</li>
+          <li className={'stat'}>SPD {spd}</li>
+        </div>
+      </div>
     </div>
   )
 }
