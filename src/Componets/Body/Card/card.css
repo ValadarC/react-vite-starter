@@ -31,6 +31,27 @@
   }
 }
 
+.headerCardNumber {
+  width: 43px;
+  height: 24px;
+  font-family: 'Kanit';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  padding-right: 10px;
+  color: #ffffff;
+
+  opacity: 0.5;
+  display: inline-block;
+  width: 3ch;
+  text-align: right;
+}
+
+.headerCardNumber::before {
+  content: '#';
+}
+
 .contentCard {
   display: flex;
   flex-direction: column;
@@ -70,6 +91,27 @@
   :first-letter {
     text-transform: uppercase;
   }
+}
+
+.tiposCardTipo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+  padding-left: 8px;
+  padding-right: 10px;
+  gap: 4px;
+  height: 20px;
+  mix-blend-mode: normal;
+  border-radius: 100px;
+  color: #ffffff;
+}
+
+.tiposCardImg {
+  width: 20px;
+  height: 20px;
+  mix-blend-mode: normal;
 }
 
 .mensuresCard {
@@ -122,67 +164,106 @@
 .stat {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: end;
   align-items: center;
   gap: 8px;
   width: 253px;
   height: 16px;
 }
 
+.statName {
+font-family: 'Kanit';
+font-style: normal;
+font-weight: 400;
+display: flex;
+align-items: center;
+color: #C1BFC2;
+}
+
+progress {
+  width: 180px;
+  height: 4px;
+  border-radius: 4px;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Estilo da barra de fundo */
+progress::-webkit-progress-bar {
+  background-color: #EAEAEB;
+  border-radius: 5px;
+  box-shadow: inset 0 2px 5px (0, 0, 0, 0.2);
+}
+
+/* Estilo da barra de valor (a parte preenchida) */
+progress::-webkit-progress-value {
+  background-color: black;
+  border-radius: 5px 0 0 5px;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Para navegadores Firefox */
+progress::-moz-progress-bar {
+  background-color: black;
+  border-radius: 5px;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
 .accent {
-  background-color: #7D3BEC;
+  background-color: #7d3bec;
 }
 .grass {
-  background-color: #A2CE69;
+  background-color: #a2ce69;
 }
 .bug {
-  background-color: #C6D282;
+  background-color: #c6d282;
 }
 .electric {
-  background-color: #EBD56C;
+  background-color: #ebd56c;
 }
 .ground {
-  background-color: #D3AE6B;
+  background-color: #d3ae6b;
 }
 .fire {
-  background-color: #D36255;
+  background-color: #d36255;
 }
 .fighting {
-  background-color: #B44D54;
+  background-color: #b44d54;
 }
 .poison {
-  background-color: #9756DC;
+  background-color: #9756dc;
 }
 .psychic {
-  background-color: #DB6AB5;
+  background-color: #db6ab5;
 }
 .fairy {
-  background-color: #E8A9D3;
+  background-color: #e8a9d3;
 }
 .dragon {
-  background-color: #B7B6DB;
+  background-color: #b7b6db;
 }
 .flying {
-  background-color: #A2BFEB;
+  background-color: #a2bfeb;
 }
 .ghost {
-  background-color: #655A7D;
+  background-color: #655a7d;
 }
 .water {
-  background-color: #3CAFE8;
+  background-color: #3cafe8;
 }
 .ice {
-  background-color: #3CAFE8;
+  background-color: #3cafe8;
 }
 .normal {
-  background-color: #D1D2C0;
+  background-color: #d1d2c0;
 }
 .rock {
-  background-color: #A49D9A;
+  background-color: #a49d9a;
 }
 .steel {
-  background-color: #78817E;
+  background-color: #78817e;
 }
 .dark {
-  background-color: #3D413F;
+  background-color: #3d413f;
 }

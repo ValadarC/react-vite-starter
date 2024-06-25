@@ -1,0 +1,28 @@
+.containerCardLoading {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  width: 277px;
+  height: 400px;
+  padding: 8px;
+  background-color: #ffffff;
+}
+
+.cardLoading {
+  flex: 1;
+  background-color: #eaeaeb;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgCardLoading {
+  display: flex;
+  width: 160px;
+  height: 160px;
+  justify-content: center;
+  align-items: center;
+}

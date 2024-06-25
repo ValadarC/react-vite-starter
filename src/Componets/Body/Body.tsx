@@ -1,7 +1,8 @@
-import { useState, useEffect, FC } from 'react'
-import { Card } from './Card/Card'
-import styles from './Body.module.css'
-import { Pokemon, TopLevel } from '../../interfaces/Pokemon.interface'
+import { useState, useEffect, FC } from "react"
+import { Card } from "./Card/Card"
+import styles from "./Body.module.css"
+import { Pokemon, TopLevel } from "../../interfaces/Pokemon.interface"
+import { CardLoading } from "./CardLoading/CardLoading"
 
 type PropText = {
   text: string
@@ -12,7 +13,7 @@ export const Body: FC<PropText> = ({ text }) => {
   const [pokemons, setPokemons] = useState<Pokemon[]>([])
   const [loading, setLoading] = useState(false)
   const [pokemonsFiltrados, setPokemonsFiltrados] = useState<Pokemon[]>([])
-
+  const itemsArray = Array(6).fill(null)
   useEffect(() => {
     setPokemonsFiltrados(
       pokemons.filter(pokemon => pokemon.name.toLowerCase().includes(text)),
@@ -31,9 +32,9 @@ export const Body: FC<PropText> = ({ text }) => {
           pokemonsData.push({
             name: data.name,
             id: data.id,
-            img: data.sprites.other?.['official-artwork'].front_default,
+            img: data.sprites.other?.["official-artwork"].front_default,
             type1: data.types[0].type.name,
-            type2: data.types[1] !== undefined ? data.types[1].type.name : '',
+            type2: data.types[1] !== undefined ? data.types[1].type.name : "",
             weight: data.weight,
             height: data.height,
             hp: data.stats[0].base_stat,
@@ -76,7 +77,15 @@ export const Body: FC<PropText> = ({ text }) => {
               spd={pokemon.spd}
             />
           ))}
-          {loading && <p>Loading...</p>}
+          {loading && (
+            <div className={styles.body}>
+              <div className={styles.cardContainer}>
+                {itemsArray.map((_, index) => (
+                  <CardLoading key={index} />
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     )
@@ -102,7 +111,15 @@ export const Body: FC<PropText> = ({ text }) => {
               spd={pokemon.spd}
             />
           ))}
-          {loading && <p>Loading...</p>}
+          {loading && (
+            <div className={styles.body}>
+              <div className={styles.cardContainer}>
+                {itemsArray.map((_, index) => (
+                  <CardLoading key={index} />
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     )
